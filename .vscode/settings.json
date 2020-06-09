@@ -3,6 +3,5 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/07a3d673-ee15-4113-9797-9c6042e54038/resourceGroups/ShaunKleynAngularApp/providers/Microsoft.Web/sites/ShaunKleyn",
     "appService.deploySubpath": "."
 }
