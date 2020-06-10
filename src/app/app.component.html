@@ -1,3 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Home One || Mister Perfect</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <!--<link rel="stylesheet" href="css/meanmenu.css">-->
+    <link rel="stylesheet" href="../MisterPerfect - Copy.css">
+    <!--<link rel="stylesheet" href="css/responsive.css">-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        @charset "UTF-8";
+        .fancybox-enabled {
+            overflow: hidden
+        }
+        
+        .fancybox-enabled body {
+            overflow: visible;
+            height: 100%
+        }
+        
+        .fancybox-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99993;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden
+        }
+        
+        .fancybox-container~.fancybox-container {
+            z-index: 99992
+        }
+        
+        .fancybox-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #0f0f11;
+            opacity: 0;
+            transition-timing-function: cubic-bezier(.55, .06, .68, .19);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden
+        }
+        
+        .fancybox-container--ready .fancybox-bg {
+            opacity: .87;
+            transition-timing-function: cubic-bezier(.22, .61, .36, 1)
+        }
+        
+        .fancybox-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            opacity: 0;
+            z-index: 99994;
+            transition: opacity .2s;
+            pointer-events: none;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            direction: ltr
+        }
+        
+        .fancybox-show-controls .fancybox-controls {
+            opacity: 1
+        }
+        
+        .fancybox-infobar {
+            display: none
+        }
+        
+        .fancybox-show-infobar .fancybox-infobar {
+            display: inline-block;
+            pointer-events: all
+        }
+        
+        .fancybox-infobar__body {
+            display: inline-block;
+            width: 70px;
+            line-height: 44px;
+            font-size: 13px;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: #ddd;
+            background-color: rgba(30, 30, 30, .7);
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: subpixel-antialiased
+        }
+        
+        .fancybox-buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+            pointer-events: all
+        }
+        
+        .fancybox-show-buttons .fancybox-buttons {
+            display: block
+        }
+        
+        .fancybox-slider-wrap {
+            overflow: hidden;
+            direction: ltr
+        }
+        
+        .fancybox-slider,
+        .fancybox-slider-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0;
+            margin: 0;
+            z-index: 99993;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-tap-highlight-color: transparent
+        }
+        
+        .fancybox-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            outline: none;
+            white-space: normal;
+            box-sizing: border-box;
+            text-align: center;
+            z-index: 99994;
+            -webkit-overflow-scrolling: touch
+        }
+        
+        .fancybox-slide:before {
+            content: "";
+            height: 100%;
+            width: 0
+        }
+        
+        .fancybox-slide:before,
+        .fancybox-slide>* {
+            display: inline-block;
+            vertical-align: middle
+        }
+        
+        .fancybox-slide>* {
+            position: relative;
+            padding: 24px;
+            margin: 44px 0;
+            border-width: 0;
+            text-align: left;
+            background-color: #fff;
+            overflow: auto;
+            box-sizing: border-box
+        }
+        
+        .fancybox-slide--image {
+            overflow: hidden
+        }
+        
+        .fancybox-slide--image:before {
+            display: none
+        }
+        
+        .fancybox-content {
+            display: inline-block;
+            position: relative;
+            margin: 44px auto;
+            padding: 0;
+            border: 0;
+            width: 80%;
+            height: calc(100% - 88px);
+            vertical-align: middle;
+            line-height: normal;
+            text-align: left;
+            white-space: normal;
+            outline: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-overflow-scrolling: touch
+        }
+        
+        .fancybox-iframe {
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff
+        }
+        
+        .fancybox-slide--video .fancybox-content,
+        .fancybox-slide--video .fancybox-iframe {
+            background: transparent
+        }
+        
+        .fancybox-placeholder {
+            z-index: 99995;
+            background: transparent;
+            cursor: default;
+            overflow: visible;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden
+        }
+        
+        .fancybox-image,
+        .fancybox-placeholder,
+        .fancybox-spaceball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+        
+        .fancybox-image,
+        .fancybox-spaceball {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            background: transparent;
+            background-size: 100% 100%
+        }
+        
+        .fancybox-controls--canzoomOut .fancybox-placeholder {
+            cursor: zoom-out
+        }
+        
+        .fancybox-controls--canzoomIn .fancybox-placeholder {
+            cursor: zoom-in
+        }
+        
+        .fancybox-controls--canGrab .fancybox-placeholder {
+            cursor: -webkit-grab;
+            cursor: grab
+        }
+        
+        .fancybox-controls--isGrabbing .fancybox-placeholder {
+            cursor: -webkit-grabbing;
+            cursor: grabbing
+        }
+        
+        .fancybox-spaceball {
+            z-index: 1
+        }
+        
+        .fancybox-tmp {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            visibility: hidden
+        }
+        
+        .fancybox-error {
+            position: absolute;
+            margin: 0;
+            padding: 40px;
+            top: 50%;
+            left: 50%;
+            width: 380px;
+            max-width: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: #fff;
+            cursor: default
+        }
+        
+        .fancybox-error p {
+            margin: 0;
+            padding: 0;
+            color: #444;
+            font: 16px/20px Helvetica Neue, Helvetica, Arial, sans-serif
+        }
+        
+        .fancybox-close-small {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            border-radius: 0;
+            outline: none;
+            background: transparent;
+            z-index: 10;
+            cursor: pointer
+        }
+        
+        .fancybox-close-small:after {
+            content: "×";
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            font: 20px/30px Arial, Helvetica Neue, Helvetica, sans-serif;
+            color: #888;
+            font-weight: 300;
+            text-align: center;
+            border-radius: 50%;
+            border-width: 0;
+            background: #fff;
+            transition: background .2s;
+            box-sizing: border-box;
+            z-index: 2
+        }
+        
+        .fancybox-close-small:focus:after {
+            outline: 1px dotted #888
+        }
+        
+        .fancybox-slide--video .fancybox-close-small {
+            top: -36px;
+            right: -36px;
+            background: transparent
+        }
+        
+        .fancybox-close-small:hover:after {
+            color: #555;
+            background: #eee
+        }
+        
+        .fancybox-caption-wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 60px 30px 0;
+            z-index: 99998;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            box-sizing: border-box;
+            background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .2) 40%, rgba(0, 0, 0, .6) 80%, rgba(0, 0, 0, .8));
+            opacity: 0;
+            transition: opacity .2s;
+            pointer-events: none
+        }
+        
+        .fancybox-show-caption .fancybox-caption-wrap {
+            opacity: 1
+        }
+        
+        .fancybox-caption {
+            padding: 30px 0;
+            border-top: 1px solid hsla(0, 0%, 100%, .4);
+            font-size: 14px;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #fff;
+            line-height: 20px;
+            -webkit-text-size-adjust: none
+        }
+        
+        .fancybox-caption a,
+        .fancybox-caption button {
+            pointer-events: all
+        }
+        
+        .fancybox-caption a {
+            color: #fff;
+            text-decoration: underline
+        }
+        
+        .fancybox-button {
+            display: inline-block;
+            position: relative;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            cursor: pointer;
+            background: transparent;
+            color: #fff;
+            box-sizing: border-box;
+            vertical-align: top;
+            outline: none
+        }
+        
+        .fancybox-button--disabled {
+            cursor: default;
+            pointer-events: none
+        }
+        
+        .fancybox-button,
+        .fancybox-infobar__body {
+            background: rgba(30, 30, 30, .6)
+        }
+        
+        .fancybox-button:hover {
+            background: rgba(0, 0, 0, .8)
+        }
+        
+        .fancybox-button:after,
+        .fancybox-button:before {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            border-color: #fff;
+            background-color: currentColor;
+            color: currentColor;
+            opacity: .9;
+            box-sizing: border-box;
+            display: inline-block
+        }
+        
+        .fancybox-button--disabled:after,
+        .fancybox-button--disabled:before {
+            opacity: .5
+        }
+        
+        .fancybox-button--left:after {
+            left: 20px;
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg)
+        }
+        
+        .fancybox-button--left:after,
+        .fancybox-button--right:after {
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            background: transparent;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor
+        }
+        
+        .fancybox-button--right:after {
+            right: 20px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg)
+        }
+        
+        .fancybox-button--left {
+            border-bottom-left-radius: 5px
+        }
+        
+        .fancybox-button--right {
+            border-bottom-right-radius: 5px
+        }
+        
+        .fancybox-button--close {
+            float: right
+        }
+        
+        .fancybox-button--close:after,
+        .fancybox-button--close:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 2px;
+            width: 16px;
+            top: calc(50% - 1px);
+            left: calc(50% - 8px)
+        }
+        
+        .fancybox-button--close:before {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg)
+        }
+        
+        .fancybox-button--close:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        
+        .fancybox-loading {
+            border: 6px solid hsla(0, 0%, 39%, .4);
+            border-top: 6px solid hsla(0, 0%, 100%, .6);
+            border-radius: 100%;
+            height: 50px;
+            width: 50px;
+            -webkit-animation: a .8s infinite linear;
+            animation: a .8s infinite linear;
+            background: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+            z-index: 99999
+        }
+        
+        @-webkit-keyframes a {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg)
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+                transform: rotate(359deg)
+            }
+        }
+        
+        @keyframes a {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg)
+            }
+            to {
+                -webkit-transform: rotate(359deg);
+                transform: rotate(359deg)
+            }
+        }
+        
+        @media (max-width:800px) {
+            .fancybox-controls {
+                text-align: left
+            }
+            .fancybox-button--left,
+            .fancybox-button--right,
+            .fancybox-buttons button:not(.fancybox-button--close) {
+                display: none!important
+            }
+            .fancybox-caption {
+                padding: 20px 0;
+                margin: 0
+            }
+        }
+        
+        .fancybox-button--fullscreen:before {
+            width: 15px;
+            height: 11px;
+            left: 15px;
+            top: 16px;
+            border: 2px solid;
+            background: none
+        }
+        
+        .fancybox-button--play:before {
+            top: 16px;
+            left: 18px;
+            width: 0;
+            height: 0;
+            border-top: 6px inset transparent;
+            border-bottom: 6px inset transparent;
+            border-left: 10px solid;
+            border-radius: 1px;
+            background: transparent
+        }
+        
+        .fancybox-button--pause:before {
+            top: 16px;
+            left: 18px;
+            width: 7px;
+            height: 11px;
+            border-style: solid;
+            border-width: 0 2px;
+            background: transparent
+        }
+        
+        .fancybox-button--thumbs span {
+            font-size: 23px
+        }
+        
+        .fancybox-button--thumbs:before {
+            top: 20px;
+            left: 21px;
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 -4px 0, -4px -4px 0, 4px -4px 0, inset 0 0 0 32px, -4px 0 0, 4px 0 0, 0 4px 0, -4px 4px 0, 4px 4px 0
+        }
+        
+        .fancybox-container--thumbs .fancybox-caption-wrap,
+        .fancybox-container--thumbs .fancybox-controls,
+        .fancybox-container--thumbs .fancybox-slider-wrap {
+            right: 220px
+        }
+        
+        .fancybox-thumbs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+            width: 220px;
+            margin: 0;
+            padding: 5px 5px 0 0;
+            background: #fff;
+            z-index: 99993;
+            word-break: normal;
+            -webkit-overflow-scrolling: touch;
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box
+        }
+        
+        .fancybox-thumbs>ul {
+            list-style: none;
+            position: absolute;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-size: 0
+        }
+        
+        .fancybox-thumbs>ul>li {
+            float: left;
+            overflow: hidden;
+            max-width: 50%;
+            padding: 0;
+            margin: 0;
+            width: 105px;
+            height: 75px;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: 5px solid #fff;
+            border-top-width: 0;
+            border-right-width: 0;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            box-sizing: border-box
+        }
+        
+        li.fancybox-thumbs-loading {
+            background: rgba(0, 0, 0, .1)
+        }
+        
+        .fancybox-thumbs>ul>li>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            max-height: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+        
+        .fancybox-thumbs>ul>li:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+            border: 4px solid #4ea7f9;
+            z-index: 99991;
+            opacity: 0;
+            transition: all .2s cubic-bezier(.25, .46, .45, .94)
+        }
+        
+        .fancybox-thumbs>ul>li.fancybox-thumbs-active:before {
+            opacity: 1
+        }
+        
+        @media (max-width:800px) {
+            .fancybox-thumbs {
+                display: none!important
+            }
+            .fancybox-container--thumbs .fancybox-caption-wrap,
+            .fancybox-container--thumbs .fancybox-controls,
+            .fancybox-container--thumbs .fancybox-slider-wrap {
+                right: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <!-- hero-area-start -->
+    <section class="hero-area row" id="_hero">
+        <!-- hero-header-area-start -->
+        <header class="col-3">
+            <div class="logo">
+                <a href="index.html">Shaun <br>Kleyn</a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li class="active"><a class="smoothscroll" href="#_hero">Home</a></li>
+                        <li><a class="smoothscroll" href="#_about">About</a></li>
+                        <li><a class="smoothscroll" href="#_skills">Skills</a></li>
+                        <li><a class="smoothscroll" href="#_experience">Experience</a></li>
+                        <li><a class="smoothscroll" href="#_service">Services</a></li>
+                        <li><a class="smoothscroll" href="#_education">Education</a></li>
+                        <li><a class="smoothscroll" href="#_portfolio">Portfolio</a></li>
+                        <li><a class="smoothscroll" href="#_clients">Cliens</a></li>
+                        <li><a class="smoothscroll" href="#_pricing">Pricing</a></li>
+                        <li><a class="smoothscroll" href="#_blog">Blog</a></li>
+                        <li><a href="contact.html">ContactMe</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="top-newsletter">
+                <h4 class="title">Newsletter</h4>
+                <p class="text">Sign up for our newsletter</p>
+                <form action="#">
+                    <div class="tn-input-box">
+                        <input type="text" placeholder="Email Address">
+                        <button><i class="fa fa-long-arrow-right"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="top-footer">
+                <p class="text">@ By <a href="#">Mister.Perfect.</a> All Rights Reserved</p>
+                <ul class="social">
+                    <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-skype"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- hero-header-area-end -->
+        <!-- hero-content-area-start -->
+        <div class="hero-content col-9">
+            <div class="box">
+                <h3 class="intro">HI,I Am</h3>
+                <h2 class="name">Shaun Kleyn</h2>
+                <p class="desg">UX/UI Designer & Front-end Developer</p>
+
+            </div>
+            <div id="particles" style="position: absolute; top: 0px; right: 0px" class="w-100 h-100"></div>
+        </div>
+        <div class="sticky-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="sticky-menu">
+                            <nav class="menu-list">
+                                <ul>
+                                    <li><a class="smoothscroll" href="#_hero">Home</a></li>
+                                    <li><a class="smoothscroll" href="#_about">About</a></li>
+                                    <li><a class="smoothscroll" href="#_skills">Skills</a></li>
+                                    <li><a class="smoothscroll" href="#_experience">Experience</a></li>
+                                    <li><a class="smoothscroll" href="#_service">Services</a></li>
+                                    <li><a class="smoothscroll" href="#_education">Education</a></li>
+                                    <li><a class="smoothscroll" href="#_portfolio">Portfolio</a></li>
+                                    <li><a class="smoothscroll" href="#_clients">Cliens</a></li>
+                                    <li><a class="smoothscroll" href="#_pricing">Pricing</a></li>
+                                    <li><a class="smoothscroll" href="#_blog">Blog</a></li>
+                                    <li><a href="contact.html">ContactMe</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hero-content-area-end -->
+    </section>
+    <!-- hero-area-start -->
+    <!-- about-section-area-start -->
+    <section class="about-section-area" id="_about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="asa-box-shadow">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-5 col-xs-12 wow fadeIn" data-wow-delay=".1s">
+                                <div class="as-intro">
+                                    <div class="as-intro-img">
+                                        <img src="img/home1/author-big.jpg" alt="">
+                                        <div class="img-2">
+                                            <img src="img/home1/author-small.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="as-intro-name">
+                                        <h2 class="name">Mister <span>Perfect</span></h2>
+                                        <p class="desg">User Interface Designer</p>
+                                    </div>
+                                    <div class="as-intro-info">
+                                        <div class="as-intro-info-box">
+                                            <span class="title">Age</span>
+                                            <span class="text">27 Years Old</span>
+                                        </div>
+                                        <div class="as-intro-info-box">
+                                            <span class="title">Phone</span>
+                                            <span class="text">+01234 566 675</span>
+                                        </div>
+                                        <div class="as-intro-info-box">
+                                            <span class="title">Email</span>
+                                            <span class="text">your@address.com</span>
+                                        </div>
+                                        <div class="as-intro-info-box">
+                                            <span class="title">Address</span>
+                                            <span class="text">Losang Parkway, P.O Box 19 Mountain View.. USA</span>
+                                        </div>
+                                    </div>
+                                    <div class="available">
+                                        <a class="button" href="#">Available for Freelance Job</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-md-offset-1 col-sm-7 col-xs-12 wow fadeIn" data-wow-delay=".2s">
+                                <div class="as-content">
+                                    <h2 class="title">Let Me Introduce Myself.</h2>
+                                    <p class="text">
+                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                        sit aspernatur aut odit aut fugit. Sed ut perspiciatis unde omnis iste natus error sit
+                                        <br>
+                                        <br>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.
+                                    </p>
+                                    <div class="download-contact">
+                                        <a href="#">Download CV</a>
+                                        <a href="#">Contact Me</a>
+                                    </div>
+                                    <ul class="social">
+                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-skype"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about-section-area-end -->
+    <!-- skills-area-start -->
+    <section class="skills-area" id="_skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="skills-box">
+                        <span class="icon"><i class="fa fa-cog"></i></span>
+                        <h4 class="title">Professional</h4>
+                        <div class="all-progess">
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">UI/UX Design</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+                                        <span>65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Web Application</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                        <span>75%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Mobile Application</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                        <span>70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Writing</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+                                        <span>55%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Photography</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+                                        <span>65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="skills-box">
+                        <span class="icon"><i class="fa fa-user"></i></span>
+                        <h4 class="title">Personal</h4>
+                        <div class="all-progess">
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">UI/UX Design</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+                                        <span>65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Web Application</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                        <span>75%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Mobile Application</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 76%;">
+                                        <span>76%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Writing</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 56%;">
+                                        <span>56%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills-progress" data-sr='enter'>
+                                <span class="progressbar-title">Photography</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                        <span>60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- skills-area-end -->
+    <!-- experience-area-start -->
+    <section class="experience-area" id="_experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="experience-side">
+                        <div class="experience-box wow fadeIn" data-wow-delay=".1s">
+                            <h4 class="title">Facebook Inc.</h4>
+                            <h6 class="desg"><span>Art Director</span></h6>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset.</p>
+                            <span class="date">2014-2016</span>
+                        </div>
+                        <div class="experience-box wow fadeIn" data-wow-delay=".3s">
+                            <h4 class="title">Samsung Com.</h4>
+                            <h6 class="desg"><span>Chif Adviser</span></h6>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset.</p>
+                            <span class="date">2014-2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="experience-side">
+                        <div class="experience-box wow fadeIn" data-wow-delay=".2s">
+                            <h4 class="title">Google Inc.</h4>
+                            <h6 class="desg"><span>Graphic Designer</span></h6>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset.</p>
+                            <span class="date">2014-2016</span>
+                        </div>
+                        <div class="experience-box wow fadeIn" data-wow-delay=".4s">
+                            <h4 class="title">Nokiea ORG</h4>
+                            <h6 class="desg"><span>UI/UX Designer</span></h6>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset.</p>
+                            <span class="date">2014-2016</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- experience-area-end -->
+    <!-- service-area-start -->
+    <section class="service-area" id="_service">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-side">
+                        <div class="service-box wow zoomIn" data-wow-delay=".1s">
+                            <span class="icon"><i class="fa fa-cog"></i></span>
+                            <h4 class="title"><span>UI/UX Design</span></h4>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi tacimates
+                                sapientem sed, pri zril ubique ut. </p>
+                        </div>
+                        <div class="service-box wow zoomIn" data-wow-delay=".3s">
+                            <span class="icon"><i class="fa fa-android"></i></span>
+                            <h4 class="title"><span>UI/UX Design</span></h4>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi tacimates
+                                sapientem sed, pri zril ubique ut. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="service-side">
+                        <div class="service-box wow zoomIn" data-wow-delay=".2s">
+                            <span class="icon"><i class="fa fa-chrome"></i></span>
+                            <h4 class="title"><span>Web Application</span></h4>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi tacimates
+                                sapientem sed, pri zril ubique ut. </p>
+                        </div>
+                        <div class="service-box wow zoomIn" data-wow-delay=".4s">
+                            <span class="icon"><i class="fa fa-hourglass-half"></i></span>
+                            <h4 class="title"><span>IOS Application</span></h4>
+                            <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi tacimates
+                                sapientem sed, pri zril ubique ut. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service-area-end -->
+    <!-- education-area-start -->
+    <section class="education-area" id="_education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="education-side">
+                        <div class="education-box wow fadeInUp" data-wow-delay=".1s">
+                            <div class="head">
+                                <h4 class="title">Art University</h4>
+                                <span class="time">2014-2016</span>
+                            </div>
+                            <div class="content">
+                                <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi
+                                    tacimates sapientem sed, pri zril ubique u</p>
+                            </div>
+                        </div>
+                        <div class="education-box wow fadeInUp" data-wow-delay=".3s">
+                            <div class="head">
+                                <h4 class="title">Creative Studio</h4>
+                                <span class="time">2014-2016</span>
+                            </div>
+                            <div class="content">
+                                <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi
+                                    tacimates sapientem sed, pri zril ubique u</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="education-side">
+                        <div class="education-box wow fadeInUp" data-wow-delay=".2s">
+                            <div class="head">
+                                <h4 class="title">Graphic Design Inc</h4>
+                                <span class="time">2014-2016</span>
+                            </div>
+                            <div class="content">
+                                <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi
+                                    tacimates sapientem sed, pri zril ubique u</p>
+                            </div>
+                        </div>
+                        <div class="education-box wow fadeInUp" data-wow-delay=".4s">
+                            <div class="head">
+                                <h4 class="title">Front-end Course</h4>
+                                <span class="time">2014-2016</span>
+                            </div>
+                            <div class="content">
+                                <p class="text">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an, cule dicta iriure at. Ubique maluisset vel te, his dico vituperata ut. Pro ei phaedrum maluisset. Ex audire suavitate has, ei quodsi
+                                    tacimates sapientem sed, pri zril ubique u</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- education-area-end -->
+    <!-- portfolio-area-start -->
+    <section class="portfolio-area" id="_portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="portfolio">
+                        <div class="portfolio-menu">
+                            <button class="button is-checked" data-filter="*">show all</button>
+                            <button class="button" data-filter=".design">design</button>
+                            <button class="button" data-filter=".development">development</button>
+                            <button class="button" data-filter=".branding">branding</button>
+                        </div>
+                        <div class="all-portfolio">
+                            <div class="row grid_container" id="container">
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid development" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-1.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-1.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid design" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-2.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-2.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid branding" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-3.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-3.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid design" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-4.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-4.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid branding" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-6.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-6.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 grid development branding" data-category="post-transition">
+                                    <div class="portfolio-box wow pulse" data-wow-delay=".2s">
+                                        <img src="img/home1/portfolio-5.jpg" alt="">
+                                        <div class="content">
+                                            <ul class="zoom-link">
+                                                <li><a href="img/home1/portfolio-5.jpg" data-fancybox="images"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                            </ul>
+                                            <h5 class="title">Creative banner</h5>
+                                            <p class="type">Graphic design</p>
+                                            <a class="link" href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="more">
+                                        <a href="#">LOAD MORE <span><i class="fa fa-repeat"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio-area-end -->
+    <!-- testimonial-area-start -->
+    <section class="testimonial-area" id="_clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonial</h2>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="testimonial testimonial-carousel owl-carousel">
+                        <div class="testimonial-box">
+                            <p class="text">Sed vel lorem et velit dictum rhoncus eget sed orci. Vestibulum ante ipsum primis in faucibus orci luctus et.</p>
+                            <h6 class="name">John Doe</h6>
+                            <p class="desg">River Side Apartments</p>
+                        </div>
+                        <div class="testimonial-box">
+                            <p class="text">Sed vel lorem et velit dictum rhoncus eget sed orci. Vestibulum ante ipsum primis in faucibus orci luctus et.</p>
+                            <h6 class="name">John Doe</h6>
+                            <p class="desg">River Side Apartments</p>
+                        </div>
+                        <div class="testimonial-box">
+                            <p class="text">Sed vel lorem et velit dictum rhoncus eget sed orci. Vestibulum ante ipsum primis in faucibus orci luctus et.</p>
+                            <h6 class="name">John Doe</h6>
+                            <p class="desg">River Side Apartments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial-area-end -->
+    <!-- logo-area-start -->
+    <div class="logo-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logos logo-carousel owl-carousel">
+                        <div class="logo-box">
+                            <img src="img/home1/logo1.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo2.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo3.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo4.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo5.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo1.jpg" alt="">
+                        </div>
+                        <div class="logo-box">
+                            <img src="img/home1/logo2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="section3" style="width: 1903px;" class="active">
+        <div class="container">
+            <h2>My Skills Values</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Technical Skills</h4>
+                    <label class="progress-bar-label">Wordpress</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                            <span>85%</span>
+                        </div>
+                        <!-- end .progress-bar -->
+                    </div>
+                    <!-- end .progress -->
+                    <label class="progress-bar-label">Photoshop</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">
+                            <span>99%</span>
+                        </div>
+                        <!-- end .progress-bar -->
+                    </div>
+                    <!-- end .progress -->
+                    <label class="progress-bar-label">HTML&amp;CSS</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                            <span>75%</span>
+                        </div>
+                        <!-- end .progress-bar -->
+                    </div>
+                    <!-- end .progress -->
+                    <label class="progress-bar-label">Javascript</label>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
+                            <span>67%</span>
+                        </div>
+                        <!-- end .progress-bar -->
+                    </div>
+                    <!-- end .progress -->
+                </div>
+                <!-- end .col-sm-6 -->
+                <div class="col-sm-6">
+                    <h4>Knowledge</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-icons purple bold-list">
+                                <li><i class="md-arrow-forward"></i>Install and Configure</li>
+                                <li><i class="md-arrow-forward"></i>Web Usability</li>
+                                <li><i class="md-arrow-forward"></i>Digital Painting</li>
+                                <li><i class="md-arrow-forward"></i>Grid and Layout</li>
+                                <li><i class="md-arrow-forward"></i>Mobile App Design</li>
+                                <li><i class="md-arrow-forward"></i>Graphical Design</li>
+                                <li><i class="md-arrow-forward"></i>SEO Optimization</li>
+                            </ul>
+                        </div>
+                        <!-- end .col-sm-6 -->
+                        <div class="col-sm-6">
+                            <ul class="list-icons purple bold-list">
+                                <li><i class="md-arrow-forward"></i>UX and UI Design</li>
+                                <li><i class="md-arrow-forward"></i>Logo Design</li>
+                                <li><i class="md-arrow-forward"></i>3D Animation &amp; Visual Effects</li>
+                                <li><i class="md-arrow-forward"></i>Audio Video Editing</li>
+                                <li><i class="md-arrow-forward"></i>Photography</li>
+                                <li><i class="md-arrow-forward"></i>Web Development</li>
+                                <li><i class="md-arrow-forward"></i>Digital Marketing</li>
+                            </ul>
+                        </div>
+                        <!-- end .col-sm-6 -->
+                    </div>
+                    <!-- end .row -->
+                </div>
+                <!-- end .col-sm-6 -->
+            </div>
+            <!-- end .row -->
+            <div class="spacer"></div>
+            <h4>Language Skills</h4>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="circle-progress-wrapper clearfix">
+                        <div class="circle-progress">
+                            <div style="display:inline;width:200px;height:200px;"><canvas width="200" height="200"></canvas><input type="text" class="dial" value="99" data-color="#7c4dff" data-from="0" data-to="99" readonly="readonly" style="width: 104px; height: 66px; position: absolute; vertical-align: middle; margin-top: 66px; margin-left: -152px; border: 0px; background: none; font: bold 40px Arial; text-align: center; color: rgb(35, 35, 35); padding: 0px; -webkit-appearance: none;"></div>
+                        </div>
+                        <!-- end .circle-progress -->
+                        <div class="circle-progress-label-wrapper"><label class="circle-progress-label">English Experienced</label></div>
+                    </div>
+                    <!-- end .circle-progress-wrapper -->
+                </div>
+                <!-- end .col-sm-4 -->
+                <div class="col-sm-4">
+                    <div class="circle-progress-wrapper clearfix">
+                        <div class="circle-progress">
+                            <div style="display:inline;width:200px;height:200px;"><canvas width="200" height="200"></canvas><input type="text" class="dial" value="80" data-color="#7c4dff" data-from="0" data-to="80" readonly="readonly" style="width: 104px; height: 66px; position: absolute; vertical-align: middle; margin-top: 66px; margin-left: -152px; border: 0px; background: none; font: bold 40px Arial; text-align: center; color: rgb(35, 35, 35); padding: 0px; -webkit-appearance: none;"></div>
+                        </div>
+                        <!-- end .circle-progress -->
+                        <div class="circle-progress-label-wrapper"><label class="circle-progress-label">French Advanced</label></div>
+                    </div>
+                    <!-- end .circle-progress-wrapper -->
+                </div>
+                <!-- end .col-sm-4 -->
+                <div class="col-sm-4">
+                    <div class="circle-progress-wrapper clearfix">
+                        <div class="circle-progress">
+                            <div style="display:inline;width:200px;height:200px;"><canvas width="200" height="200"></canvas><input type="text" class="dial" value="69" data-color="#7c4dff" data-from="0" data-to="69" readonly="readonly" style="width: 104px; height: 66px; position: absolute; vertical-align: middle; margin-top: 66px; margin-left: -152px; border: 0px; background: none; font: bold 40px Arial; text-align: center; color: rgb(35, 35, 35); padding: 0px; -webkit-appearance: none;"></div>
+                        </div>
+                        <!-- end .circle-progress -->
+                        <div class="circle-progress-label-wrapper"><label class="circle-progress-label">German Basic</label></div>
+                    </div>
+                    <!-- end .circle-progress-wrapper -->
+                </div>
+                <!-- end .col-sm-4 -->
+            </div>
+            <!-- end .row -->
+        </div>
+        <!-- end .container -->
+    </section>
+    <section id="section4" style="width: 1903px;" class="active">
+        <div class="container">
+            <h2>8 Years Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-block clearfix">
+                    <div class="meta">
+                        <span class="year">2012 - Current</span>
+                        <span class="company">Themeforest</span>
+                    </div>
+                    <!-- end .meta -->
+                    <div class="content">
+                        <h5>Senior Web &amp; UX Designer</h5>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+                    <!-- end .content -->
+                    <div class="icon">
+                        <i class="ion-easel"></i>
+                    </div>
+                    <!-- end .icon -->
+                    <div class="line"></div>
+                </div>
+                <!-- end .experience-block -->
+                <div class="experience-block clearfix">
+                    <div class="meta">
+                        <span class="year">2008 - 2012</span>
+                        <span class="company">Graphicriver</span>
+                    </div>
+                    <!-- end .meta -->
+                    <div class="content">
+                        <h5>Graphic Designer</h5>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+                    <!-- end .content -->
+                    <div class="icon">
+                        <i class="ion-images"></i>
+                    </div>
+                    <!-- end .icon -->
+                    <div class="line"></div>
+                </div>
+                <!-- end .experience-block -->
+                <div class="experience-block clearfix">
+                    <div class="meta">
+                        <span class="year">2006 - 2008</span>
+                        <span class="company">Codecanyon</span>
+                    </div>
+                    <!-- end .meta -->
+                    <div class="content">
+                        <h5>Web Developer</h5>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velitus sed quia non num quam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+                    <!-- end .content -->
+                    <div class="icon">
+                        <i class="ion-card"></i>
+                    </div>
+                    <!-- end .icon -->
+                </div>
+                <!-- end .experience-block -->
+            </div>
+            <!-- end .experience-timeline -->
+            <!-- Testimonials -->
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="testimonial-slider owl-carousel owl-theme owl-loaded">
+
+
+
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-3000px, 0px, 0px); transition: all 0.25s ease 0s; width: 5250px;">
+                                <div class="owl-item cloned" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 750px; margin-right: 0px;">
+                                    <div>
+                                        <div class="image"><img src="images/testimonial.jpg" alt="alt text"></div>
+                                        <div class="sep"></div>
+                                        <p>" Awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work. "</p>
+                                        <span class="author">swetain , CEO of Texco Company</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-controls">
+                            <div class="owl-nav">
+                                <div class="owl-prev" style="display: none;">prev</div>
+                                <div class="owl-next" style="display: none;">next</div>
+                            </div>
+                            <div class="owl-dots" style="">
+                                <div class="owl-dot"><span></span></div>
+                                <div class="owl-dot"><span></span></div>
+                                <div class="owl-dot active"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end .testimonial-slider -->
+                </div>
+                <!-- end .col-sm-8 -->
+            </div>
+            <!-- end .row -->
+
+        </div>
+        <!-- end .container -->
+    </section>
+    <!-- logo-area-end -->
+    <section>
+        <div class="content">
+
+            <!--Block content-->
+            <div class="block-content margBMedium">
+
+
+                <!--Skill design-->
+                <div class=" skill des">
+
+
+                    <!--Row-->
+                    <div class="row ">
+
+                        <div class="vc">
+
+                            <div class="col-md-11">
+
+                                <ul class="skills-list clearfix">
+                                    <li>
+                                        <h4>Photoshop</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 75%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>Illustrator</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 85%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>Indesign</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 70%;"></div>
+                                        </div>
+                                    </li>
+
+
+
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="col-md-1">
+                                <div class="title des">
+                                    <span>design</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--End row-->
+
+                </div>
+                <!--End skill design-->
+
+            </div>
+            <!--End block content-->
+            <!--Block content-->
+            <div class="block-content margBMedium">
+
+
+                <!--Skill design-->
+                <div class=" skill dev">
+
+
+                    <!--Row-->
+                    <div class="row">
+
+                        <div class="vc">
+
+                            <div class="col-md-11">
+
+                                <ul class="skills-list clearfix">
+                                    <li>
+                                        <h4>Html/css</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 90%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>javascript</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 75%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>php/mysql</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 90%;"></div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="col-md-1">
+                                <div class="title dev">
+                                    <span>Coding </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--End row-->
+
+                </div>
+                <!--End skill design-->
+
+            </div>
+            <!--End block content-->
+            <!--Block content-->
+            <div class="block-content">
+
+
+                <!--Skill design-->
+                <div class=" skill prs">
+
+
+                    <!--Row-->
+                    <div class="row ">
+
+                        <div class="vc">
+
+                            <div class="col-md-11">
+
+                                <ul class="skills-list clearfix">
+                                    <li>
+                                        <h4>Responsible</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 85%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>Creative</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 75%;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h4>Multitasking</h4>
+                                        <div class="progress">
+                                            <div class="percentage" style="width: 90%;"></div>
+                                        </div>
+                                    </li>
+
+
+
+
+
+
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="col-md-1">
+                                <div class="title prs">
+                                    <span>assets </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!--End row-->
+
+                </div>
+                <!--End skill design-->
+
+            </div>
+            <!--End block content-->
+
+
+
+
+        </div>
+    </section>
+    <!-- pricing-area-start -->
+    <section class="pricing-area" id="_pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pricing</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay=".1.0s" data-wow-duration="1.0s">
+                    <div class="single-princing">
+                        <div class="content">
+                            <h2 class="title">BASIC</h2>
+                            <ol class="list">
+                                <li>1 Hosting</li>
+                                <li>2 Email Marketing</li>
+                                <li>5 Databases</li>
+                                <li>2 Design Pack</li>
+                                <li>3 Website Layouts</li>
+                                <li>5 Header Style</li>
+                                <li>3 Online Store</li>
+                            </ol>
+                            <h2 class="price">$199</h2>
+                        </div>
+                        <div class="buy">
+                            <a href="#">buy now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay=".2.0s" data-wow-duration="1.3s">
+                    <div class="single-princing active">
+                        <div class="content">
+                            <h2 class="title">ULTIMATE</h2>
+                            <ol class="list">
+                                <li>3 Hosting</li>
+                                <li>6 Email Marketing</li>
+                                <li>15 Databases</li>
+                                <li>6 Design Pack</li>
+                                <li>12 Website Layouts</li>
+                                <li>15 Header Style</li>
+                                <li>9 Online Store</li>
+                            </ol>
+                            <h2 class="price">$199</h2>
+                        </div>
+                        <div class="buy">
+                            <a href="#">buy now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay=".3.0s" data-wow-duration="1.6s">
+                    <div class="single-princing">
+                        <div class="content">
+                            <h2 class="title">STANDARD</h2>
+                            <ol class="list">
+                                <li>2 Hosting</li>
+                                <li>4 Email Marketing</li>
+                                <li>10 Databases</li>
+                                <li>4 Design Pack</li>
+                                <li>6 Website Layouts</li>
+                                <li>10 Header Style</li>
+                                <li>6 Online Store</li>
+                            </ol>
+                            <h2 class="price">$199</h2>
+                        </div>
+                        <div class="buy">
+                            <a href="#">buy now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pricing-area-end -->
+    <!-- blog-area-start -->
+    <section class="blog-area" id="_blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Blog</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1.0s" data-wow-duration="1.0s">
+                    <div class="single-blog">
+                        <div class="sb-left">
+                            <a href="#"><img src="img/home1/blog1.jpg" alt=""></a>
+                            <div class="sb1-img-content">
+                                <span class="button">...</span>
+                                <ul class="list">
+                                    <li><a href="#"><i class="fa fa-share-alt-square"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-comment-o"></i><span>12</span></a></li>
+                                    <li><a href="#"><i class="fa fa-heart-o"></i><span>25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sb-right">
+                            <span class="date">21 Jan, 2016</span>
+                            <h4 class="title">Make It Clean And Simple</h4>
+                            <p class="text">Lorem Ipsum is simply dummy textthe printing and typeset ting industry </p>
+                            <a class="more" href="#">READ MORE <span><i class="fa fa-arrow-circle-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1.0s" data-wow-duration="1.0s">
+                    <div class="single-blog">
+                        <div class="sb-left">
+                            <a href="#"><img src="img/home1/blog2.jpg" alt=""></a>
+                            <div class="sb1-img-content">
+                                <span class="button">...</span>
+                                <ul class="list">
+                                    <li><a href="#"><i class="fa fa-share-alt-square"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-comment-o"></i><span>12</span></a></li>
+                                    <li><a href="#"><i class="fa fa-heart-o"></i><span>25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sb-right">
+                            <span class="date">21 Jan, 2016</span>
+                            <h4 class="title">Make It Clean And Simple</h4>
+                            <p class="text">Lorem Ipsum is simply dummy textthe printing and typeset ting industry </p>
+                            <a class="more" href="#">READ MORE <span><i class="fa fa-arrow-circle-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog-area-end -->
+    <!-- footer-start -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 wow fadeIn" data-wow-delay="0.5s" data-wow-duration="0.5s">
+                    <div class="footer-top">
+                        <div class="go-top">
+                            <a class="smoothscroll" href="#_hero"><i class="fa fa-angle-down"></i></a>
+                        </div>
+                        <p class="intro">Lorem ipsum dolor sit amet, consectetur adipi</p>
+                        <h2 class="title">Are you ready to start your project now?</h2>
+                        <div class="get-quote">
+                            <a href="#"><span><i class="fa fa-check-square-o"></i></span>Get Quotes</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p class="copyright">@ 2018 Mister Perfect.all right reserved</p>
+                        <ul class="social">
+                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+    <!-- Scripts -->
+    <!-- MeanMenu -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.0.4/jquery.countdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <!--<script src="js/jquery.meanmenu.js"></script>-->
+    <script>
+        ! function($) {
+            "use strict";
+            $.fn.meanmenu = function(e) {
+                var n = {
+                    meanMenuTarget: jQuery(this),
+                    meanMenuContainer: "body",
+                    meanMenuClose: "X",
+                    meanMenuCloseSize: "18px",
+                    meanMenuOpen: "<span /><span /><span />",
+                    meanRevealPosition: "right",
+                    meanRevealPositionDistance: "0",
+                    meanRevealColour: "",
+                    meanScreenWidth: "480",
+                    meanNavPush: "",
+                    meanShowChildren: !0,
+                    meanExpandableChildren: !0,
+                    meanExpand: "+",
+                    meanContract: "-",
+                    meanRemoveAttrs: !1,
+                    onePage: !1,
+                    meanDisplay: "block",
+                    removeElements: ""
+                };
+                e = $.extend(n, e);
+                var a = window.innerWidth || document.documentElement.clientWidth;
+                return this.each(function() {
+                    var n = e.meanMenuTarget,
+                        t = e.meanMenuContainer,
+                        r = e.meanMenuClose,
+                        i = e.meanMenuCloseSize,
+                        s = e.meanMenuOpen,
+                        u = e.meanRevealPosition,
+                        m = e.meanRevealPositionDistance,
+                        l = e.meanRevealColour,
+                        o = e.meanScreenWidth,
+                        c = e.meanNavPush,
+                        v = ".meanmenu-reveal",
+                        h = e.meanShowChildren,
+                        d = e.meanExpandableChildren,
+                        y = e.meanExpand,
+                        j = e.meanContract,
+                        Q = e.meanRemoveAttrs,
+                        f = e.onePage,
+                        g = e.meanDisplay,
+                        p = e.removeElements,
+                        C = !1;
+                    (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/Blackberry/i) || navigator.userAgent.match(/Windows Phone/i)) && (C = !0), (navigator.userAgent.match(/MSIE 8/i) || navigator.userAgent.match(/MSIE 7/i)) && jQuery("html").css("overflow-y", "scroll");
+                    var w = "",
+                        x = function() {
+                            if ("center" === u) {
+                                var e = window.innerWidth || document.documentElement.clientWidth,
+                                    n = e / 2 - 22 + "px";
+                                w = "left:" + n + ";right:auto;", C ? jQuery(".meanmenu-reveal").animate({
+                                    left: n
+                                }) : jQuery(".meanmenu-reveal").css("left", n)
+                            }
+                        },
+                        A = !1,
+                        E = !1;
+                    "right" === u && (w = "right:" + m + ";left:auto;"), "left" === u && (w = "left:" + m + ";right:auto;"), x();
+                    var M = "",
+                        P = function() {
+                            M.html(jQuery(M).is(".meanmenu-reveal.meanclose") ? r : s)
+                        },
+                        W = function() {
+                            jQuery(".mean-bar,.mean-push").remove(), jQuery(t).removeClass("mean-container"), jQuery(n).css("display", g), A = !1, E = !1, jQuery(p).removeClass("mean-remove")
+                        },
+                        b = function() {
+                            var e = "background:" + l + ";color:" + l + ";" + w;
+                            if (o >= a) {
+                                jQuery(p).addClass("mean-remove"), E = !0, jQuery(t).addClass("mean-container"), jQuery(".mean-container").prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="' + e + '">Show Navigation</a><nav class="mean-nav"></nav></div>');
+                                var r = jQuery(n).html();
+                                jQuery(".mean-nav").html(r), Q && jQuery("nav.mean-nav ul, nav.mean-nav ul *").each(function() {
+                                    jQuery(this).is(".mean-remove") ? jQuery(this).attr("class", "mean-remove") : jQuery(this).removeAttr("class"), jQuery(this).removeAttr("id")
+                                }), jQuery(n).before('<div class="mean-push" />'), jQuery(".mean-push").css("margin-top", c), jQuery(n).hide(), jQuery(".meanmenu-reveal").show(), jQuery(v).html(s), M = jQuery(v), jQuery(".mean-nav ul").hide(), h ? d ? (jQuery(".mean-nav ul ul").each(function() {
+                                    jQuery(this).children().length && jQuery(this, "li:first").parent().append('<a class="mean-expand" href="#" style="font-size: ' + i + '">' + y + "</a>")
+                                }), jQuery(".mean-expand").on("click", function(e) {
+                                    e.preventDefault(), jQuery(this).hasClass("mean-clicked") ? (jQuery(this).text(y), jQuery(this).prev("ul").slideUp(300, function() {})) : (jQuery(this).text(j), jQuery(this).prev("ul").slideDown(300, function() {})), jQuery(this).toggleClass("mean-clicked")
+                                })) : jQuery(".mean-nav ul ul").show() : jQuery(".mean-nav ul ul").hide(), jQuery(".mean-nav ul li").last().addClass("mean-last"), M.removeClass("meanclose"), jQuery(M).click(function(e) {
+                                    e.preventDefault(), A === !1 ? (M.css("text-align", "center"), M.css("text-indent", "0"), M.css("font-size", i), jQuery(".mean-nav ul:first").slideDown(), A = !0) : (jQuery(".mean-nav ul:first").slideUp(), A = !1), M.toggleClass("meanclose"), P(), jQuery(p).addClass("mean-remove")
+                                }), f && jQuery(".mean-nav ul > li > a:first-child").on("click", function() {
+                                    jQuery(".mean-nav ul:first").slideUp(), A = !1, jQuery(M).toggleClass("meanclose").html(s)
+                                })
+                            } else W()
+                        };
+                    C || jQuery(window).resize(function() {
+                        a = window.innerWidth || document.documentElement.clientWidth, a > o, W(), o >= a ? (b(), x()) : W()
+                    }), jQuery(window).resize(function() {
+                        a = window.innerWidth || document.documentElement.clientWidth, C ? (x(), o >= a ? E === !1 && b() : W()) : (W(), o >= a && (b(), x()))
+                    }), b()
+                })
+            }
+        }(jQuery);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollup/2.4.1/jquery.scrollUp.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        + function() {
+            function e(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+            }
+
+            function t(e) {
+                return parseInt(e, 10)
+            }
+
+            function n(e) {
+                return e.replace(N.trimAll, "")
+            }
+
+            function r() {
+                return "#" + M().toString(16).slice(-6)
+            }
+
+            function o(e, t) {
+                return e === t ? e : M() * (e - t) + t
+            }
+
+            function i() {
+                var e = arguments,
+                    t = e[0] || {},
+                    n = !1,
+                    r = e.length,
+                    o = 1,
+                    u = void 0,
+                    a = void 0,
+                    s = void 0;
+                for (f(t) && (n = t, t = e[1] || {}, o++); o < r; o++)
+                    for (a in e[o])
+                        if (u = e[o][a], n && (c(u) || (s = T(u)))) {
+                            var l = t[a];
+                            s ? (s = !1, l = T(l) ? l : []) : l = c(l) ? l : {}, t[a] = i(n, l, u)
+                        } else t[a] = u;
+                return t
+            }
+
+            function u(e, t) {
+                return Object.prototype.toString.call(e) === t
+            }
+
+            function a(e) {
+                return u(e, "[object Function]")
+            }
+
+            function c(e) {
+                return u(e, "[object Object]")
+            }
+
+            function s(e) {
+                return "string" == typeof e
+            }
+
+            function f(e) {
+                return "boolean" == typeof e
+            }
+
+            function l(e) {
+                return "undefined" == typeof e
+            }
+
+            function d(e) {
+                return null === e
+            }
+
+            function v(e) {
+                return !(!e || 1 !== e.nodeType)
+            }
+
+            function p(e, n) {
+                var r = q.getComputedStyle(e)[n];
+                return N.styleValue.test(r) ? t(r) : r
+            }
+
+            function h(e) {
+                for (var t = e.offsetLeft || 0, n = e.offsetTop || 0; e = e.offsetParent;) t += e.offsetLeft, n += e.offsetTop;
+                return {
+                    left: t,
+                    top: n
+                }
+            }
+
+            function m(e, t, n) {
+                e.addEventListener(t, n)
+            }
+
+            function y(e, t, n) {
+                e.removeEventListener(t, n)
+            }
+
+            function b(e) {
+                e.cw = e.c.width = p(e.container, "width") || D, e.ch = e.c.height = p(e.container, "height") || I
+            }
+
+            function g(e, t) {
+                return e > 0 && e < 1 ? t * e : e
+            }
+
+            function O(e, t) {
+                return (o(e, t) || e) * (M() > .5 ? 1 : -1)
+            }
+
+            function w(e, t) {
+                if (e.set) {
+                    for (var n = arguments.length, r = Array(n > 2 ? n - 2 : 0), o = 2; o < n; o++) r[o - 2] = arguments[o];
+                    for (var i = 0; i < r.length; i++) a(r[i]) && t.push(r[i])
+                }
+                return e
+            }
+
+            function j(e) {
+                var t = !!T(e) && e.length,
+                    n = function() {
+                        return e[S(M() * t)]
+                    };
+                return s(e) ? function() {
+                    return e
+                } : t ? n : r
+            }
+
+            function A(e, t) {
+                e.canvasRemoved || !e.set || e.paused || (a(t) && t.call(e, "pause"), e.paused = !0)
+            }
+
+            function E(e, t) {
+                !e.canvasRemoved && e.set && e.paused && (a(t) && t.call(e, "open"), e.paused = !1, e.draw())
+            }
+
+            function z(e, t) {
+                e.set.resize && (e._resizeHandler = function() {
+                    var n = e.cw,
+                        r = e.ch;
+                    b(e);
+                    var o = e.cw / n,
+                        i = e.ch / r;
+                    T(e.dots) && e.dots.forEach(function(e) {
+                        c(e) && (e.x *= o, e.y *= i)
+                    }), a(t) && t.call(e, o, i), e.paused && e.draw()
+                }, m(q, "resize", e._resizeHandler))
+            }
+
+            function R(e, t, r) {
+                n(t).split(",").forEach(function(t) {
+                    e[t] = function() {
+                        B[t](this, r)
+                    }
+                })
+            }
+
+            function C(e, t) {
+                var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : K;
+                Object.defineProperty(n, t, {
+                    value: e,
+                    writable: !1,
+                    enumerable: !0,
+                    configurable: !1
+                })
+            }
+            var L = !0,
+                P = /msie\s8.0/i.test(navigator.userAgent);
+            Object.defineProperty && !P || (L = !1, Object.defineProperty = function(e, t, n) {
+                e[t] = n.value
+            }), "function" != typeof Object.create && (Object.create = function() {
+                function e() {}
+                var t = Object.prototype.hasOwnProperty;
+                return function(n) {
+                    if ("object" != typeof n) throw TypeError("Object prototype may only be an Object or null");
+                    e.prototype = n;
+                    var r = new e;
+                    if (e.prototype = null, arguments.length > 1) {
+                        var o = Object(arguments[1]);
+                        for (var i in o) t.call(o, i) && (r[i] = o[i])
+                    }
+                    return r
+                }
+            }());
+            var k = function() {
+                    function e(e, t) {
+                        for (var n = 0; n < t.length; n++) {
+                            var r = t[n];
+                            r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
+                        }
+                    }
+                    return function(t, n, r) {
+                        return n && e(t.prototype, n), r && e(t, r), t
+                    }
+                }(),
+                F = "2.0.1",
+                q = window,
+                x = document,
+                M = Math.random,
+                S = Math.floor,
+                T = Array.isArray,
+                H = !!q.DeviceOrientationEvent,
+                D = 485,
+                I = 300,
+                N = {
+                    trimAll: /\s/g,
+                    styleValue: /^\d+(\.\d+)?[a-z]+$/i
+                },
+                _ = function() {
+                    function t(n, r, o) {
+                        e(this, t), L && (this.container = v(r) ? r : x.querySelector(r)) && (this.set = i(!0, {}, K.commonConfig, n.defaultConfig, o), this.c = x.createElement("canvas"), this.cxt = this.c.getContext("2d"), this.paused = !1, b(this), this.container.innerHTML = "", this.container.appendChild(this.c), this.color = j(this.set.color), this.observeCanvasRemoved(), this.init(), this.resize())
+                    }
+                    return k(t, [{
+                        key: "requestAnimationFrame",
+                        value: function() {
+                            this.canvasRemoved || this.paused || q.requestAnimationFrame(this.draw.bind(this))
+                        }
+                    }, {
+                        key: "observeCanvasRemoved",
+                        value: function() {
+                            var e = this;
+                            this.destructionListeners = [], V(this.c, function() {
+                                e.canvasRemoved = !0, e._resizeHandler && y(q, "resize", e._resizeHandler), e.destructionListeners.forEach(function(e) {
+                                    e()
+                                })
+                            })
+                        }
+                    }, {
+                        key: "onDestroy",
+                        value: function() {
+                            return w.apply(void 0, [this, this.destructionListeners].concat(Array.prototype.slice.call(arguments)))
+                        }
+                    }, {
+                        key: "pause",
+                        value: function() {
+                            A(this)
+                        }
+                    }, {
+                        key: "open",
+                        value: function() {
+                            E(this)
+                        }
+                    }, {
+                        key: "resize",
+                        value: function() {
+                            z(this)
+                        }
+                    }]), t
+                }();
+            q.requestAnimationFrame = function(e) {
+                return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || function(t) {
+                    e.setTimeout(t, 1e3 / 60)
+                }
+            }(q);
+            var V = function() {
+                    var e = q.MutationObserver || q.WebKitMutationObserver,
+                        t = function o(e, t) {
+                            if (e === t) return !0;
+                            if (v(e))
+                                for (var n = e.children, r = n.length; r--;)
+                                    if (o(n[r], t)) return !0;
+                            return !1
+                        },
+                        n = function(n, r) {
+                            var o = new e(function(e, o) {
+                                for (var i = e.length; i--;)
+                                    for (var u = e[i].removedNodes, a = u.length; a--;)
+                                        if (t(u[a], n)) return o.disconnect(), r()
+                            });
+                            o.observe(document, {
+                                childList: !0,
+                                subtree: !0
+                            })
+                        },
+                        r = function(e, n) {
+                            var r = function o(r) {
+                                t(r.target, e) && (document.removeEventListener("DOMNodeRemoved", o), n())
+                            };
+                            document.addEventListener("DOMNodeRemoved", r)
+                        };
+                    return e ? n : r
+                }(),
+                B = {
+                    orientationSupport: H,
+                    regExp: N,
+                    pInt: t,
+                    trimAll: n,
+                    randomColor: r,
+                    limitRandom: o,
+                    extend: i,
+                    typeChecking: u,
+                    isPlainObject: c,
+                    isFunction: a,
+                    isArray: T,
+                    isString: s,
+                    isBoolean: f,
+                    isUndefined: l,
+                    isNull: d,
+                    isElement: v,
+                    observeElementRemoved: V,
+                    getCss: p,
+                    offset: h,
+                    on: m,
+                    off: y,
+                    scaleValue: g,
+                    calcSpeed: O,
+                    pause: A,
+                    open: E,
+                    resize: z,
+                    modifyPrototype: R,
+                    defineReadOnlyProperty: C,
+                    registerListener: w
+                },
+                Q = {
+                    opacity: 1,
+                    color: [],
+                    resize: !0
+                },
+                J = {
+                    linear: function(e, t, n, r, o) {
+                        return n + (r - n) * e
+                    },
+                    swing: function() {
+                        return J.easeInOutQuad.apply(J, arguments)
+                    },
+                    easeInOutQuad: function(e, t, n, r, o) {
+                        return (t /= o / 2) < 1 ? r / 2 * t * t + n : -r / 2 * (--t * (t - 2) - 1) + n
+                    }
+                },
+                K = {
+                    version: F,
+                    utils: B,
+                    Base: _,
+                    easing: J
+                };
+            ! function U(e) {
+                for (var t in e) {
+                    var n = e[t];
+                    C(n, t, e), c(n) && U(n)
+                }
+            }(K), K.commonConfig = Q, q.JParticles = K, "function" == typeof define && define.amd ? define(function() {
+                return K
+            }) : "object" == typeof module && module.exports && (module.exports = K)
+        }();
+    </script>
+    <script>
+        + function() {
+            "use strict";
+
+            function e(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+            }
+
+            function t(e, t) {
+                if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                return !t || "object" != typeof t && "function" != typeof t ? e : t
+            }
+
+            function i(e, t) {
+                if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+                e.prototype = Object.create(t && t.prototype, {
+                    constructor: {
+                        value: e,
+                        enumerable: !1,
+                        writable: !0,
+                        configurable: !0
+                    }
+                }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
+            }
+
+            function n(e, t, i) {
+                for (; e = e.offsetParent;)
+                    if (x(e, t) === i) return !0;
+                return !1
+            }
+            var a = function() {
+                    function e(e, t) {
+                        for (var i = 0; i < t.length; i++) {
+                            var n = t[i];
+                            n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n)
+                        }
+                    }
+                    return function(t, i, n) {
+                        return i && e(t.prototype, i), n && e(t, n), t
+                    }
+                }(),
+                o = JParticles,
+                r = o.utils,
+                s = o.Base,
+                l = Math.random,
+                f = Math.abs,
+                c = Math.PI,
+                u = Math.floor,
+                h = 2 * c,
+                p = r.pInt,
+                v = r.limitRandom,
+                m = r.calcSpeed,
+                y = r.scaleValue,
+                x = r.getCss,
+                d = r.offset,
+                O = r.isElement,
+                b = (r.isFunction, r.isNull),
+                g = r.on,
+                w = r.off,
+                E = r.orientationSupport,
+                X = r.resize,
+                Y = r.defineReadOnlyProperty,
+                k = function(o) {
+                    function r(i, n) {
+                        return e(this, r), t(this, (r.__proto__ || Object.getPrototypeOf(r)).call(this, r, i, n))
+                    }
+                    return i(r, o), a(r, [{
+                        key: "version",
+                        get: function() {
+                            return "2.0.0"
+                        }
+                    }]), a(r, [{
+                        key: "init",
+                        value: function() {
+                            this.attrNormalize(), this.set.range > 0 && (this.positionX = l() * this.cw, this.positionY = l() * this.ch, this.defineLineShape(), this.positionEvent()), this.mouseX = this.mouseY = 0, this.createDots(), this.draw(), this.parallaxEvent()
+                        }
+                    }, {
+                        key: "attrNormalize",
+                        value: function() {
+                            var e = this.cw,
+                                t = this.set;
+                            ["num", "proximity", "range"].forEach(function(i) {
+                                t[i] = p(y(t[i], e))
+                            }), O(t.eventElem) || t.eventElem === document || (t.eventElem = this.c)
+                        }
+                    }, {
+                        key: "defineLineShape",
+                        value: function() {
+                            var e = this,
+                                t = this.set,
+                                i = t.proximity,
+                                n = t.range,
+                                a = t.lineShape;
+                            switch (a) {
+                                case "cube":
+                                    this.lineShapeMaker = function(t, a, o, r, s) {
+                                        var l = e.positionX,
+                                            c = e.positionY;
+                                        f(t - o) <= i && f(a - r) <= i && f(t - l) <= n && f(a - c) <= n && f(o - l) <= n && f(r - c) <= n && s()
+                                    };
+                                    break;
+                                default:
+                                    this.lineShapeMaker = function(t, a, o, r, s) {
+                                        var l = e.positionX,
+                                            c = e.positionY;
+                                        f(t - o) <= i && f(a - r) <= i && (f(t - l) <= n && f(a - c) <= n || f(o - l) <= n && f(r - c) <= n) && s()
+                                    }
+                            }
+                        }
+                    }, {
+                        key: "createDots",
+                        value: function() {
+                            for (var e = this.cw, t = this.ch, i = this.color, n = this.set, a = n.num, o = n.maxR, r = n.minR, s = n.maxSpeed, f = n.minSpeed, c = n.parallaxLayer, h = c.length, p = this.dots = []; a--;) {
+                                var y = v(o, r);
+                                p.push({
+                                    r: y,
+                                    x: v(e - y, y),
+                                    y: v(t - y, y),
+                                    vx: m(s, f),
+                                    vy: m(s, f),
+                                    color: i(),
+                                    parallaxLayer: c[u(l() * h)],
+                                    parallaxOffsetX: 0,
+                                    parallaxOffsetY: 0
+                                })
+                            }
+                        }
+                    }, {
+                        key: "draw",
+                        value: function() {
+                            var e = this.cw,
+                                t = this.ch,
+                                i = this.cxt,
+                                n = this.set,
+                                a = n.range,
+                                o = n.lineWidth,
+                                r = n.opacity;
+                            i.clearRect(0, 0, e, t), i.lineWidth = o, i.globalAlpha = r, this.updateXY(), this.dots.forEach(function(e) {
+                                var t = e.x,
+                                    n = e.y,
+                                    a = e.r,
+                                    o = e.parallaxOffsetX,
+                                    r = e.parallaxOffsetY;
+                                i.save(), i.beginPath(), i.arc(t + o, n + r, a, 0, h), i.fillStyle = e.color, i.fill(), i.restore()
+                            }), a > 0 && this.connectDots(), this.requestAnimationFrame()
+                        }
+                    }, {
+                        key: "connectDots",
+                        value: function() {
+                            var e = this.dots,
+                                t = this.cxt,
+                                i = this.lineShapeMaker,
+                                n = e.length;
+                            e.forEach(function(a, o) {
+                                for (var r = a.x + a.parallaxOffsetX, s = a.y + a.parallaxOffsetY, l = function() {
+                                        var n = e[o],
+                                            l = n.x + n.parallaxOffsetX,
+                                            f = n.y + n.parallaxOffsetY;
+                                        i(r, s, l, f, function() {
+                                            t.save(), t.beginPath(), t.moveTo(r, s), t.lineTo(l, f), t.strokeStyle = a.color, t.stroke(), t.restore()
+                                        })
+                                    }; ++o < n;) l()
+                            })
+                        }
+                    }, {
+                        key: "updateXY",
+                        value: function() {
+                            var e = this.paused,
+                                t = this.mouseX,
+                                i = this.mouseY,
+                                n = this.cw,
+                                a = this.ch,
+                                o = this.set,
+                                r = o.parallax,
+                                s = o.parallaxStrength;
+                            this.dots.forEach(function(o) {
+                                if (!e) {
+                                    if (r) {
+                                        var l = s * o.parallaxLayer;
+                                        o.parallaxOffsetX += (t / l - o.parallaxOffsetX) / 10, o.parallaxOffsetY += (i / l - o.parallaxOffsetY) / 10
+                                    }
+                                    o.x += o.vx, o.y += o.vy;
+                                    var c = o.x,
+                                        u = o.y,
+                                        h = o.r,
+                                        p = o.parallaxOffsetX,
+                                        v = o.parallaxOffsetY;
+                                    c += p, u += v, c + h >= n ? o.vx = -f(o.vx) : c - h <= 0 && (o.vx = f(o.vx)), u + h >= a ? o.vy = -f(o.vy) : u - h <= 0 && (o.vy = f(o.vy))
+                                }
+                            })
+                        }
+                    }, {
+                        key: "setElemOffset",
+                        value: function() {
+                            return this.elemOffset = this.set.eventElem === document ? null : d(this.set.eventElem)
+                        }
+                    }, {
+                        key: "proxyEvent",
+                        value: function(e, t) {
+                            var i = this,
+                                a = this.set.eventElem,
+                                o = null;
+                            E && (o = function(e) {
+                                i.paused || b(e.beta) || t(Math.min(Math.max(e.beta, -90), 90), e.gamma)
+                            }, g(window, "deviceorientation", o));
+                            var r = function(t) {
+                                if (!i.paused) {
+                                    var o = t.pageX,
+                                        r = t.pageY;
+                                    i.setElemOffset() && (n(a, "position", "fixed") && (o = t.clientX, r = t.clientY), o -= i.elemOffset.left, r -= i.elemOffset.top), e(o, r)
+                                }
+                            };
+                            g(a, "mousemove", r), this.onDestroy(function() {
+                                w(a, "mousemove", r), w(window, "deviceorientation", o)
+                            })
+                        }
+                    }, {
+                        key: "positionEvent",
+                        value: function() {
+                            var e = this,
+                                t = this.set.range;
+                            t > this.cw && t > this.ch || this.proxyEvent(function(t, i) {
+                                e.positionX = t, e.positionY = i
+                            }, function(t, i) {
+                                e.positionY = -(t - 90) / 180 * e.ch, e.positionX = -(i - 90) / 180 * e.cw
+                            })
+                        }
+                    }, {
+                        key: "parallaxEvent",
+                        value: function() {
+                            var e = this;
+                            this.set.parallax && this.proxyEvent(function(t, i) {
+                                e.mouseX = t - e.cw / 2, e.mouseY = i - e.ch / 2
+                            }, function(t, i) {
+                                e.mouseX = -i * e.cw / 180, e.mouseY = -t * e.ch / 180
+                            })
+                        }
+                    }, {
+                        key: "resize",
+                        value: function() {
+                            var e = this;
+                            X(this, function(t, i) {
+                                e.set.range > 0 && (e.positionX *= t, e.positionY *= i, e.mouseX *= t, e.mouseY *= i)
+                            })
+                        }
+                    }]), r
+                }(s);
+            k.defaultConfig = {
+                num: .12,
+                maxR: 2.4,
+                minR: .6,
+                maxSpeed: 1,
+                minSpeed: .1,
+                proximity: .2,
+                range: .2,
+                lineWidth: .2,
+                lineShape: "spider",
+                eventElem: null,
+                parallax: !1,
+                parallaxLayer: [1, 2, 3],
+                parallaxStrength: 3
+            }, Y(k, "particle")
+        }();
+    </script>
+
+    <script src="../MisterPerfect - Copy.js"></script>
+</body>
+
+</html>
+
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -337,60 +2977,42 @@
     <div class="card-container">
         <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-
             <span>Learn Angular</span>
-
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg> </a>
-
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </a>
         <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-
             <span>CLI Documentation</span>
-
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
         </a>
-
         <a class="card" target="_blank" rel="noopener" href="https://blog.angular.io/">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
-
             <span>Angular Blog</span>
-
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
         </a>
-
     </div>
 
     <!-- Next Steps -->
     <h2>Next Steps</h2>
     <p>What do you want to do next with your app?</p>
-
     <input type="hidden" #selection>
-
     <div class="card-container">
         <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-
             <span>New Component</span>
         </div>
-
         <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-
             <span>Angular Material</span>
         </div>
-
         <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-
             <span>Add PWA Support</span>
         </div>
-
         <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-
             <span>Add Dependency</span>
         </div>
-
         <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
 
