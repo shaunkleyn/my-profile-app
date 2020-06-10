@@ -1,15 +1,6 @@
 {
     "name": "shaun-kleyn-profile",
     "version": "0.0.0",
-    // "scripts": {
-    //     "ng": "ng",
-    //     "start": "node node_modules/.bin/ng serve",
-    //     "build": "node node_modules/.bin/ng build --prod",
-    //     "test": "ng test",
-    //     "lint": "ng lint",
-    //     "e2e": "ng e2e",
-    //     "postinstall": "npm run build"
-    // },
     "engines": { "node": "12.15.0" },
     "private": true,
     "dependencies": {
