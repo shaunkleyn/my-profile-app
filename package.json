@@ -7,19 +7,9 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "postinstall": "npm run build"
+        "e2e": "ng e2e"
     },
-    "directories": {
-        "doc": "doc",
-        "test": "test"
-    },
-    "engines": { "node": "0.10.16" },
     "private": true,
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/shaunkleyn/my-profile-app.git"
-    },
     "dependencies": {
         "@angular/animations": "~9.1.9",
         "@angular/common": "~9.1.9",
