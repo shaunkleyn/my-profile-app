@@ -1,7 +1,9 @@
 {
     "name": "shaun-kleyn-profile",
     "version": "0.0.0",
-    "engines": { "node": "12.15.0" },
+    "engines": {
+        "node": "12.15.0"
+    },
     "private": true,
     "dependencies": {
         "@angular/animations": "~9.1.9",
