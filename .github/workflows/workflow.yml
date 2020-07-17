@@ -35,7 +35,7 @@ jobs:
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v1
       with:
-        app-name: ShaunKleyn
+        app-name: shaun-kleyn-profile
         package: dist
         publish-profile: ${{ secrets.AZURE_CREDENTIALS_408c6a21 }}
         
