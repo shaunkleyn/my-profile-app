@@ -35,8 +35,8 @@ jobs:
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v1
       with:
-        app-name: ShaunKleyn
-        package: dist
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_CREDENTIALS_408c6a21 }}
         
   # For more information on GitHub Actions for Azure, refer to https://github.com/Azure/Actions
