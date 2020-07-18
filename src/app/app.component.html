@@ -36,7 +36,9 @@
 </head>
 
 <div class="container">
-    <div id="preloader"></div>
+    <ul class="timeline">
+        <li *ngFor="let item of timeline; even as isEven; odd as isOdd" [class.even]="isEven && item.title !== ''" [class.odd]="isOdd && item.title !== ''" [style.width]="item.percent +'%'">{{item.title}}</li>
+    </ul>
     <!-- hero-area-start -->
     <section class="hero-area row" id="_hero">
         <!-- hero-header-area-start -->
@@ -121,6 +123,68 @@
         <!-- hero-content-area-end -->
     </section>
     <!-- hero-area-start -->
+
+    <hr>
+    <div id="article-container">
+        <article>
+            <dl>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Sep 24</dt>
+                        <dd>Cargo Ready </dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Sep 25</dt>
+                        <dd>Pickup Date</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Oct 01</dt>
+                        <dd>Cutoff Date</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Oct 07</dt>
+                        <dd>FMC Date</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Oct 20</dt>
+                        <dd>ATD</dd>
+                        <dd>ETD</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Nov 20</dt>
+                        <dd>Est DSH</dd>
+                        <dd>DSH</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Nov 28</dt>
+                        <dd>ETA Original</dd>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell-content">
+                        <dt>Dec 31</dt>
+                        <dd>FMC End Date</dd>
+                    </div>
+                </div>
+            </dl>
+        </article>
+    </div>
+
+
+    <hr>
+
     <!-- about-section-area-start -->
     <section class="about-section-area" id="_about">
         <div class="container">
