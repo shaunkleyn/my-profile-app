@@ -34,10 +34,57 @@
         <![endif]-->
 
 </head>
-
+<ul>
+    list
+    <ul>List A
+        <li>liA1</li>
+        <li>liA2</li>
+    </ul>
+    <ul>List b
+        <li>lib1</li>
+        <li>lib2</li>
+    </ul>
+</ul>
 <div class="container">
+<hr>
+
+<ul class="timeline">
+
+
+    <ul class="events">    <li *ngFor="let item of timeline; even as isEven; odd as isOdd" 
+        [class.even]="item.id > 0 && item.id % 2 == 0" 
+        [class.odd]="item.id > 0 && item.id % 2 != 0" 
+        class="bg-id-{{item.id}}"
+        [style.width]="item.percent +'%'">
+        <span class="title">{{item.title}}</span>
+        <span class="description">{{item.description}}</span>
+    </li></ul>
+
+    <ul class="years">
+        <li class="year-list" *ngFor="let year of years"><span class="year">{{year}}</span>
+            <!-- <span class="month" *ngFor="let month of months"></span> -->
+            <ul class="months">
+                <li class="month" *ngFor="let month of months"></li>
+            </ul>
+        </li>
+
+    </ul>
+
+</ul>
+<hr>
+
+
+
     <ul class="timeline">
-        <li *ngFor="let item of timeline; even as isEven; odd as isOdd" [class.even]="isEven && item.title !== ''" [class.odd]="isOdd && item.title !== ''" [style.width]="item.percent +'%'">{{item.title}}</li>
+        <ul class="years"><li class="year" *ngFor="let year of years">{{year}}</li></ul>
+        <li *ngFor="let item of timeline; even as isEven; odd as isOdd" 
+            [class.even]="item.id > 0 && item.id % 2 == 0" 
+            [class.odd]="item.id > 0 && item.id % 2 != 0" 
+            class="bg-id-{{item.id}}"
+            [style.width]="item.percent +'%'">
+            <span class="title">{{item.title}}</span>
+            <span class="description">{{item.description}}</span>
+        </li>
     </ul>
     <!-- hero-area-start -->
     <section class="hero-area row" id="_hero">
