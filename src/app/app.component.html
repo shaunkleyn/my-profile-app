@@ -1,3 +1,4 @@
+<app-root></app-root>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,11 +52,19 @@
 <ul class="timeline">
 
 
-    <ul class="events">    <li *ngFor="let item of timeline; even as isEven; odd as isOdd" 
+    <ul class="events">    
+        <li *ngFor="let item of timeline; even as isEven; odd as isOdd" 
         [class.even]="item.id > 0 && item.id % 2 == 0" 
         [class.odd]="item.id > 0 && item.id % 2 != 0" 
         class="bg-id-{{item.id}}"
         [style.width]="item.percent +'%'">
+        <span class="detail">
+            <div class="card">
+                <div class="card-header">Heading</div>
+                <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed ut perspiciatis unde omnis iste natus error sit</div>
+            </div>
+        </span>
+
         <span class="title">{{item.title}}</span>
         <span class="description">{{item.description}}</span>
     </li></ul>
